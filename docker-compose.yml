@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  dev: &default
+    build:
+      context: .
+      target: dev
+    volumes:
+      - ./:/work
+  dev:
+    <<: *default
+    command: tail -f /dev/null
